@@ -13,10 +13,10 @@ This Project covers how to use Spring Boot with Spring Kafka to Publish JSON mes
 ## Create Kafka Topic
     bin/kafka-topics.sh --create --topic exampletopic --bootstrap-server localhost:9092
 
-## modify partition number to 4
+## Modify partition number to 4
     bin/kafka-topics.sh --bootstrap-server localhost:9092 --alter --topic exampletopic --partitions 4
 
-## modify retention time to 86400000 ms
+## Modify retention time to 86400000 ms
     bin/kafka-configs.sh --bootstrap-server localhost:9092 --alter --entity-type topics --entity-name exampletopic --add-config retention.ms=86400000
 
 ## -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -32,17 +32,17 @@ This Project covers how to use Spring Boot with Spring Kafka to Publish JSON mes
 ## Create Kafka Topic
     bin/windows/kafka-topics.sh --create --topic exampletopic --bootstrap-server localhost:9092
 
-## modify partition number to 4
+## Modify partition number to 4
     bin/windows/kafka-topics.bat --bootstrap-server localhost:9092 --alter --topic exampletopic --partitions 4
 
-## modify retention time to 86400000 ms
+## Modify retention time to 86400000 ms
     bin/windows/kafka-configs.bat --bootstrap-server localhost:9092 --alter --entity-type topics --entity-name exampletopic --add-config retention.ms=86400000
 
 
 
 ## Publish message via WebService
-- `http://localhost:8081/avanade/publish/nome1`
-- `http://localhost:8081/avanade/publish/nome2`
+- curl --location 'localhost:8081/avanade/publish/newUser' --header 'Content-Type: application/json' --data '{"name":"bob","dept": "engineering","salary": "100000"}'
+- curl --location 'localhost:8081/avanade/publish/newUserCallBack' --header 'Content-Type: application/json' --data '{"bob":"wee","dept": "engineering","salary": "800000"}'
 
 
 
