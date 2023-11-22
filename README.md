@@ -30,7 +30,7 @@ This Project covers how to use Spring Boot with Spring Kafka to Publish JSON mes
     bin/windows/kafka-server-start.bat ../../config/server.properties
 
 ## Create Kafka Topic
-    bin/windows/kafka-topics.sh --create --topic exampletopic --bootstrap-server localhost:9092
+    bin/windows/kafka-topics.bat --create --topic exampletopic --bootstrap-server localhost:9092
 
 ## Modify partition number to 4
     bin/windows/kafka-topics.bat --bootstrap-server localhost:9092 --alter --topic exampletopic --partitions 4
